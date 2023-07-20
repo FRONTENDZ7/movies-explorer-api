@@ -1,4 +1,4 @@
-//forbiddenError 403
+// forbiddenError 403
 class ForbiddenError extends Error {
   constructor(message) {
     super(message);

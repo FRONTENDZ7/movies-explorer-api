@@ -1,4 +1,4 @@
-//errorHandler 500
+// errorHandler 500
 const errorHandler = (err, req, res, next) => {
   console.log(err);
   const statusCode = err.statusCode || 500;

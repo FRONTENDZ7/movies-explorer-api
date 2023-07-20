@@ -1,4 +1,4 @@
-//movies routers
+// movies routers
 const router = require('express').Router();
 const {
   validationPostMovie,

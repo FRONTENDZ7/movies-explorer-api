@@ -1,4 +1,4 @@
-//constants errors
+// constants errors
 const allowedCors = [
   'https://praktikum.tk',
   'http://praktikum.tk',

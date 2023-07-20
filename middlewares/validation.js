@@ -1,4 +1,4 @@
-//validation
+// validation
 const { celebrate, Joi } = require('celebrate');
 const isUrl = require('validator/lib/isURL');
 const { errorMessages } = require('../utils/constants');

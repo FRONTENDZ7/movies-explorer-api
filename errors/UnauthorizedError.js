@@ -1,4 +1,4 @@
-//unauthorizedError 401
+// unauthorizedError 401
 class UnauthorizedError extends Error {
   constructor(message) {
     super(message);

@@ -1,4 +1,4 @@
-//authorization routers
+// authorization routers
 const router = require('express').Router();
 const { createUser, login, logout } = require('../controllers/users');
 const { signUp, signIn } = require('../middlewares/validation');

@@ -1,4 +1,4 @@
-//cors
+// cors
 const { allowedCors } = require('../utils/constants');
 
 module.exports = (req, res, next) => {

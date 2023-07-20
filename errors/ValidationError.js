@@ -1,4 +1,4 @@
-//validationError 400
+// validationError 400
 class ValidationError extends Error {
   constructor(message) {
     super(message);

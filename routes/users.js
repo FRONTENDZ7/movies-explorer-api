@@ -1,4 +1,4 @@
-//users routers
+// users routers
 const router = require('express').Router();
 const { validationUpdateUser } = require('../middlewares/validation');
 

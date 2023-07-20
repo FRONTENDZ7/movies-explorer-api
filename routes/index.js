@@ -1,4 +1,4 @@
-//index routers
+// index routers
 const users = require('./users');
 const movies = require('./movies');
 const authorization = require('./authorization');

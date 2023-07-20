@@ -1,4 +1,4 @@
-//notfoundError 404
+// notfoundError 404
 class NotFoundError extends Error {
   constructor(message) {
     super(message);

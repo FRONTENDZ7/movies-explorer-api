@@ -1,4 +1,4 @@
-//movie
+// movie
 const mongoose = require('mongoose');
 const isUrl = require('validator/lib/isURL');
 const { errorMessages } = require('../utils/constants');

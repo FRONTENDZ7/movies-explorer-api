@@ -1,4 +1,4 @@
-//castError 400
+// castError 400
 class CastError extends Error {
   constructor(message) {
     super(message);
