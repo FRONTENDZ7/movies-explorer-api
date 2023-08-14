@@ -7,7 +7,7 @@ const { errorMessages } = require('../utils/constants');
 
 require('dotenv').config();
 
-const { JWT_SECRET = 'JWT_SECRET', NODE_ENV } = process.env;
+const { JWT_SECRET, NODE_ENV } = process.env;
 
 const User = require('../models/user');
 
@@ -81,7 +81,7 @@ module.exports.login = (req, res, next) => {
     .then((user) => {
       const token = jwt.sign(
         { _id: user._id },
-        NODE_ENV === 'production' ? JWT_SECRET : 'JWT_SECRET',
+        NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret',
         {
           expiresIn: '7d',
         },
