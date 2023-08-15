@@ -32,9 +32,17 @@ module.exports.createUser = (req, res, next) => {
     password: hash,
   });
 
+  const findOne = (hash) => User.findOne({email}).then((user) => ({user, hash}));
+
   bcrypt
     .hash(password, 10)
-    .then((hash) => createUser(hash))
+    .then(findOne)
+    .then(({user, hash}) => {
+      if(user) {
+        throw new ConflictError(errorMessages.createUser)
+      }
+      return createUser(hash)
+    });
     .then((user) => {
       const { _id } = user;
       res.send({
@@ -99,6 +107,12 @@ module.exports.login = (req, res, next) => {
 };
 
 module.exports.logout = (req, res) => {
+  res.cookie('jwt', '', {
+    maxAge: 0,
+    httpOnly: true,
+    secure: true,
+    sameSite: 'None',
+  });
   res.clearCookie('jwt');
   return res.send({ message: 'logout - ok!' });
 };
