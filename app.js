@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 // app
 const express = require('express');
 const mongoose = require('mongoose');

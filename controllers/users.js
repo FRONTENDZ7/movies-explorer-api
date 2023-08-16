@@ -32,17 +32,15 @@ module.exports.createUser = (req, res, next) => {
     password: hash,
   });
 
-  const findOne = (hash) => User.findOne({email}).then((user) => ({user, hash}));
+  const findOne = (hash) => User.findOne({ email }).then((user) => ({ user, hash }));
 
   bcrypt
     .hash(password, 10)
     .then(findOne)
-    .then(({user, hash}) => {
-      if(user) {
-        throw new ConflictError(errorMessages.createUser)
-      }
-      return createUser(hash)
-    });
+    .then(({ user, hash }) => {
+      if (user) { throw new ConflictError(errorMessages.createUser); }
+      return createUser(hash);
+    })
     .then((user) => {
       const { _id } = user;
       res.send({
